@@ -1,6 +1,11 @@
+# Details
+
+Blog post: https://sridharkatakam.com/genesis-starter-child-theme
+
+
 # Genesis Sample Theme
 
-Github project link: https://github.com/copyblogger/genesis-sample
+Github original project link: https://github.com/copyblogger/genesis-sample
 
 
 ## Installation Instructions

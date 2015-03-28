@@ -97,10 +97,9 @@ function sp_next_page_link ( $text ) {
  * @return array
  */
 function be_remove_genesis_page_templates( $page_templates ) {
-	// unset( $page_templates['page_archive.php'] );
+	unset( $page_templates['page_archive.php'] );
 	unset( $page_templates['page_blog.php'] );
 	return $page_templates;
 }
 add_filter( 'theme_page_templates', 'be_remove_genesis_page_templates' );
 
-add_filter( 'gform_enable_field_label_visibility_settings', '__return_true' );

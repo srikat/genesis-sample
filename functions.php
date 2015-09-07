@@ -5,7 +5,7 @@ include_once( get_template_directory() . '/lib/init.php' );
 //* Child theme (do not remove)
 define( 'CHILD_THEME_NAME', 'Genesis Sample Theme' );
 define( 'CHILD_THEME_URL', 'http://www.studiopress.com/' );
-define( 'CHILD_THEME_VERSION', '2.1.2' );
+define( 'CHILD_THEME_VERSION', '2.2.0' );
 
 //* Enqueue Google Fonts
 add_action( 'wp_enqueue_scripts', 'genesis_sample_google_fonts' );
@@ -18,6 +18,10 @@ function genesis_sample_google_fonts() {
 //* Add HTML5 markup structure
 add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list' ) );
 
+//* Add Accessibility support
+// add_theme_support( 'genesis-accessibility', array( 'headings', 'drop-down-menu', 'search-form', 'skip-links', 'rems' ) );
+add_theme_support( 'genesis-accessibility', array( 'headings', 'search-form', 'skip-links', 'rems' ) );
+
 //* Add viewport meta tag for mobile browsers
 add_theme_support( 'genesis-responsive-viewport' );
 
@@ -26,7 +30,6 @@ add_theme_support( 'custom-background' );
 
 //* Add support for 3-column footer widgets
 add_theme_support( 'genesis-footer-widgets', 3 );
-
 
 /**********************************
  *
@@ -45,22 +48,22 @@ add_theme_support( 'genesis-footer-widgets', 3 );
 ************************************/
 add_filter( 'genesis_seo_title', 'custom_header_inline_logo', 10, 3 );
 function custom_header_inline_logo( $title, $inside, $wrap ) {
- 
+
 	$logo = '<img src="' . get_stylesheet_directory_uri() . '/images/logo.png" alt="' . esc_attr( get_bloginfo( 'name' ) ) . '" title="' . esc_attr( get_bloginfo( 'name' ) ) . '" width="300" height="60" />';
- 
+
 	$inside = sprintf( '<a href="%s" title="%s">%s</a>', trailingslashit( home_url() ), esc_attr( get_bloginfo( 'name' ) ), $logo );
- 
+
 	// Determine which wrapping tags to use - changed is_home to is_front_page to fix Genesis bug
 	$wrap = is_front_page() && 'title' === genesis_get_seo_option( 'home_h1_on' ) ? 'h1' : 'p';
- 
+
 	// A little fallback, in case an SEO plugin is active - changed is_home to is_front_page to fix Genesis bug
 	$wrap = is_front_page() && ! genesis_get_seo_option( 'home_h1_on' ) ? 'h1' : $wrap;
- 
+
 	// And finally, $wrap in h1 if HTML5 & semantic headings enabled
 	$wrap = genesis_html5() && genesis_get_seo_option( 'semantic_headings' ) ? 'h1' : $wrap;
- 
+
 	return sprintf( '<%1$s %2$s>%3$s</%1$s>', $wrap, genesis_attr( 'site-title' ), $inside );
- 
+
 }
 
 // Remove the site description
@@ -102,4 +105,3 @@ function be_remove_genesis_page_templates( $page_templates ) {
 	return $page_templates;
 }
 add_filter( 'theme_page_templates', 'be_remove_genesis_page_templates' );
-

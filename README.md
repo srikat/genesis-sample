@@ -18,4 +18,12 @@ Github original project link: https://github.com/copyblogger/genesis-sample
 
 ## Theme Support
 
-Please visit http://my.studiopress.com/help/ for theme support.
+This child theme theme is provided as is - without any support.
+
+Please visit http://my.studiopress.com/help/ for parent Genesis theme related support.
+
+### Change Log
+
+** Monday, September 07, 2015 **
+
+Now the theme is based on Genesis Sample 2.2.0. Accessibility theme support for navigation menus has been removed to ensure that mobile responsive nav menus work properly.

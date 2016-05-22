@@ -28,7 +28,7 @@ function genesis_sample_css() {
 
 	//* Calculate Color Contrast
 	function genesis_sample_color_contrast( $color ) {
-	
+
 		$hexcolor = str_replace( '#', '', $color );
 
 		$red   = hexdec( substr( $hexcolor, 0, 2 ) );
@@ -40,7 +40,7 @@ function genesis_sample_css() {
 		return ( $luminosity > 128 ) ? '#333333' : '#ffffff';
 
 	}
-	
+
 	//* Calculate Color Brightness
 	function genesis_sample_color_brightness( $color, $change ) {
 
@@ -49,27 +49,12 @@ function genesis_sample_css() {
 		$red   = hexdec( substr( $hexcolor, 0, 2 ) );
 		$green = hexdec( substr( $hexcolor, 2, 2 ) );
 		$blue  = hexdec( substr( $hexcolor, 4, 2 ) );
-	
+
 		$red   = max( 0, min( 255, $red + $change ) );
-		$green = max( 0, min( 255, $green + $change ) );  
+		$green = max( 0, min( 255, $green + $change ) );
 		$blue  = max( 0, min( 255, $blue + $change ) );
 
 		return '#'.dechex( $red ).dechex( $green ).dechex( $blue );
-
-	}
-
-	//* Change Color Brightness
-	function genesis_sample_change_brightness( $color ) {
-
-		$hexcolor = str_replace( '#', '', $color );
-
-		$red   = hexdec( substr( $hexcolor, 0, 2 ) );
-		$green = hexdec( substr( $hexcolor, 2, 2 ) );
-		$blue  = hexdec( substr( $hexcolor, 4, 2 ) );
-
-		$luminosity = ( ( $red * 0.2126 ) + ( $green * 0.7152 ) + ( $blue * 0.0722 ) );
-
-		return ( $luminosity > 128 ) ? genesis_sample_color_brightness( '#333333', 20 ) : genesis_sample_color_brightness( '#ffffff', -50 );
 
 	}
 
@@ -105,10 +90,10 @@ function genesis_sample_css() {
 		.button:focus,
 		.button:hover,
 		.sidebar .enews-widget input[type="submit"] {
-			background-color: %1$s;
-			color: %2$s;
+			background-color: %s;
+			color: %s;
 		}
-		', $color_accent, genesis_sample_color_contrast( $color_accent ), genesis_sample_change_brightness( $color_accent ) ) : '';
+		', $color_accent, genesis_sample_color_contrast( $color_accent ) ) : '';
 
 	if ( $css ) {
 		wp_add_inline_style( $handle, $css );

@@ -24,6 +24,10 @@ Please visit http://my.studiopress.com/help/ for parent Genesis theme related su
 
 ### Change Log
 
-Monday, September 07, 2015
+May 22, 2016
+
+Update based on Genesis Sample 2.2.3.
+
+September 07, 2015
 
 Now the theme is based on Genesis Sample 2.2.0. Accessibility theme support for navigation menus has been removed to ensure that mobile responsive nav menus work properly.

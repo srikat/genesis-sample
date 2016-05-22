@@ -1127,7 +1127,7 @@ body .gform_wrapper .top_label .gfield_label {
 .site-header .widget-area {
 	float: right;
 	text-align: right;
-	width: 800px;
+	/*width: 800px;*/
 }
 
 

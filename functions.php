@@ -57,11 +57,11 @@ add_theme_support( 'genesis-responsive-viewport' );
 
 //* Add support for custom header
 add_theme_support( 'custom-header', array(
-	'width'           => 600,
-	'height'          => 160,
-	'header-selector' => '.site-title a',
-	'header-text'     => false,
-	'flex-height'     => true,
+	'width'            => 600,
+	'height'           => 160,
+	'flex-height'      => true,
+	'flex-width'       => true,
+	'header-text'      => false,
 ) );
 
 //* Add support for custom background
@@ -74,10 +74,9 @@ add_theme_support( 'genesis-after-entry-widget-area' );
 add_theme_support( 'genesis-footer-widgets', 3 );
 
 //* Add Image Sizes
-add_image_size( 'featured-image', 720, 400, TRUE );
+add_image_size( 'featured-image', 720, 400, true );
 
 //* Rename primary and secondary navigation menus
-// add_theme_support( 'genesis-menus' , array( 'primary' => __( 'After Header Menu', 'genesis-sample' ), 'secondary' => __( 'Footer Menu', 'genesis-sample' ) ) );
 add_theme_support( 'genesis-menus' , array( 'primary' => __( 'Primary Navigation', 'genesis-sample' ), 'secondary' => __( 'Footer Menu', 'genesis-sample' ) ) );
 
 //* Reposition the secondary navigation menu
@@ -128,7 +127,6 @@ add_theme_support( 'genesis-structural-wraps', array(
 	'header',
 	// 'nav',
 	'subnav',
-	'site-inner',
 	'footer-widgets',
 	'footer'
 ) );

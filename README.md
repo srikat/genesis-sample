@@ -1,3 +1,7 @@
+# Update on August 23, 2017
+
+I have released a newer version of the Genesis Sample Starter theme at https://github.com/srikat/genesis-starter. Grab that instead of this one here.
+
 # Details
 
 Blog post: https://sridharkatakam.com/genesis-starter-child-theme
